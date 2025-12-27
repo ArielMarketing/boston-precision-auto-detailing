@@ -7,35 +7,28 @@
 
   <style>
     :root {
-      --dark: #0f172a;
-      --green: #22c55e;
-      --gray: #1e293b;
-      --light: #f8fafc;
+      --red: #d62828;
+      --darkred: #a4161a;
+      --white: #ffffff;
+      --lightgray: #f3f3f3;
+      --gray: #e5e5e5;
+      --text: #1a1a1a;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: var(--dark);
-      color: var(--light);
+      background: var(--white);
+      color: var(--text);
     }
 
-    /* Sticky Header */
+    /* STATIC LOGO BANNER */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--gray);
-      padding: 0;
-      border-bottom: 2px solid var(--green);
-    }
-
-    /* LOGO BANNER */
-    .logo-banner {
-      background: var(--gray);
+      background: var(--white);
       padding: 1.5rem 1.5rem;
-      position: relative;
       text-align: center;
+      border-bottom: 3px solid var(--red);
+      position: relative;
     }
 
     .logo-banner img {
@@ -47,8 +40,8 @@
       position: absolute;
       top: 15px;
       right: 20px;
-      background: var(--green);
-      color: #022c22;
+      background: var(--red);
+      color: var(--white);
       padding: 0.6rem 1rem;
       border-radius: 8px;
       font-weight: bold;
@@ -65,6 +58,7 @@
       padding: 3rem 1.5rem;
       text-align: center;
       position: relative;
+      color: var(--white);
     }
 
     .hero::before {
@@ -88,12 +82,11 @@
       font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto 1.5rem;
-      color: #d1d5db;
     }
 
     .cta {
-      background: var(--green);
-      color: #022c22;
+      background: var(--red);
+      color: var(--white);
       padding: 1rem 1.8rem;
       border-radius: 10px;
       text-decoration: none;
@@ -112,8 +105,10 @@
       text-align: center;
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: var(--darkred);
     }
 
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -122,14 +117,15 @@
     }
 
     .card {
-      background: var(--gray);
+      background: var(--lightgray);
       padding: 1.5rem;
       border-radius: 12px;
+      border: 2px solid var(--gray);
     }
 
     .price {
       font-weight: bold;
-      color: var(--green);
+      color: var(--red);
       margin-bottom: 0.75rem;
     }
 
@@ -154,13 +150,14 @@
       transform: scale(1.03);
     }
 
-    /* BOOKING FORM */
+    /* FORM */
     .form-box {
-      background: var(--gray);
+      background: var(--lightgray);
       padding: 2rem;
       border-radius: 12px;
       max-width: 600px;
       margin: 2rem auto 0;
+      border: 2px solid var(--gray);
     }
 
     .form-box input,
@@ -169,21 +166,21 @@
       padding: 0.9rem;
       margin-bottom: 1rem;
       border-radius: 8px;
-      border: none;
-      background: #0f172a;
-      color: var(--light);
+      border: 1px solid var(--gray);
+      background: var(--white);
+      color: var(--text);
     }
 
     .form-box button {
       width: 100%;
       padding: 1rem;
-      background: var(--green);
+      background: var(--red);
       border: none;
       border-radius: 10px;
       font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      color: #022c22;
+      color: var(--white);
     }
 
     /* FLOATING CALL BUTTON */
@@ -191,8 +188,8 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: var(--green);
-      color: #022c22;
+      background: var(--red);
+      color: var(--white);
       padding: 1rem 1.2rem;
       border-radius: 50%;
       font-size: 1.3rem;
@@ -205,9 +202,10 @@
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: var(--gray);
+      background: var(--lightgray);
       font-size: 0.9rem;
-      color: #9ca3af;
+      color: var(--text);
+      border-top: 2px solid var(--red);
     }
   </style>
 </head>
@@ -252,7 +250,7 @@
 
 <section>
   <h2>Gallery</h2>
-  <p style="text-align:center; color:#cbd5e1;">Real auto detailing work similar to what you can expect.</p>
+  <p style="text-align:center; color:var(--darkred);">Real auto detailing work similar to what you can expect.</p>
 
   <div class="gallery">
     <img src="https://images.pexels.com/photos/4870707/pexels-photo-4870707.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Foam Wash">
@@ -267,7 +265,6 @@
 <section>
   <h2>Book a Detailing Appointment</h2>
 
-  <!-- NETLIFY FORM -->
   <form class="form-box" name="booking" method="POST" netlify>
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="text" name="vehicle" placeholder="Vehicle Make & Model" required>
