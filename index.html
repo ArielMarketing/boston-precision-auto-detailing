@@ -43,7 +43,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      padding: 6rem 1.5rem;
+      padding: 3rem 1.5rem; /* SHORTER BANNER */
       text-align: center;
       position: relative;
     }
@@ -58,6 +58,21 @@
     .hero-content {
       position: relative;
       z-index: 2;
+    }
+
+    /* PHONE NUMBER IN CORNER */
+    .hero-phone {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 3;
+      background: var(--green);
+      color: #022c22;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
     }
 
     .hero h1 {
@@ -201,6 +216,8 @@
 </header>
 
 <div class="hero">
+  <a class="hero-phone" href="tel:7819274672">781‑927‑4672</a>
+
   <div class="hero-content">
     <h1>Boston Precision Auto Detailing</h1>
     <p>Premium mobile detailing delivered to your home or workplace. Serving Boston and surrounding areas.</p>
@@ -234,35 +251,26 @@
   <p style="text-align:center; color:#cbd5e1;">Real auto detailing work similar to what you can expect.</p>
 
   <div class="gallery">
-    <!-- Exterior foam wash -->
-    <img src="https://images.unsplash.com/photo-1607860108855-0a2a7f6e6b1a?auto=format&fit=crop&w=900&q=80" alt="Foam Wash">
-
-    <!-- Interior detailing -->
-    <img src="https://images.unsplash.com/photo-1604147706283-d7119b2c1f5b?auto=format&fit=crop&w=900&q=80" alt="Interior Detailing">
-
-    <!-- Wheel cleaning -->
-    <img src="https://images.unsplash.com/photo-1614200187524-3f3e3d2ad8d3?auto=format&fit=crop&w=900&q=80" alt="Wheel Cleaning">
-
-    <!-- Polishing -->
-    <img src="https://images.unsplash.com/photo-1597004891283-5e1b6bbfcd48?auto=format&fit=crop&w=900&q=80" alt="Polishing">
-
-    <!-- Hand wash -->
-    <img src="https://images.unsplash.com/photo-1618397745623-5e1b6bbfcd48?auto=format&fit=crop&w=900&q=80" alt="Hand Wash">
-
-    <!-- Tire shine -->
-    <img src="https://images.unsplash.com/photo-1618397745803-3f3e3d2ad8d3?auto=format&fit=crop&w=900&q=80" alt="Tire Shine">
+    <img src="https://images.unsplash.com/photo-1607860108855-0a2a7f6e6b1a?auto=format&fit=crop&w=900&q=80">
+    <img src="https://images.unsplash.com/photo-1604147706283-d7119b2c1f5b?auto=format&fit=crop&w=900&q=80">
+    <img src="https://images.unsplash.com/photo-1614200187524-3f3e3d2ad8d3?auto=format&fit=crop&w=900&q=80">
+    <img src="https://images.unsplash.com/photo-1597004891283-5e1b6bbfcd48?auto=format&fit=crop&w=900&q=80">
+    <img src="https://images.unsplash.com/photo-1618397745623-5e1b6bbfcd48?auto=format&fit=crop&w=900&q=80">
+    <img src="https://images.unsplash.com/photo-1618397745803-3f3e3d2ad8d3?auto=format&fit=crop&w=900&q=80">
   </div>
 </section>
 
 <section>
   <h2>Book a Detailing Appointment</h2>
-  <div class="form-box">
-    <input type="text" placeholder="Your Name">
-    <input type="text" placeholder="Vehicle Make & Model">
-    <input type="text" placeholder="Preferred Date">
-    <textarea rows="4" placeholder="Additional Details"></textarea>
-    <button>Submit Request</button>
-  </div>
+
+  <!-- NETLIFY FORM -->
+  <form class="form-box" name="booking" method="POST" netlify>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="vehicle" placeholder="Vehicle Make & Model" required>
+    <input type="text" name="date" placeholder="Preferred Date" required>
+    <textarea name="details" rows="4" placeholder="Additional Details"></textarea>
+    <button type="submit">Submit Request</button>
+  </form>
 </section>
 
 <section>
